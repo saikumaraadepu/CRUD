@@ -37,7 +37,7 @@ public class CatFactEntity {
 	}
 
 	//Deserialization
-	private CatFact convertToCatFact(CatFact catFact) {
+	public CatFact convertToCatFact() {
 		try {
 			ObjectMapper objectMapper = new ObjectMapper();
 			return objectMapper.readValue(catfactJSON, CatFact.class);
