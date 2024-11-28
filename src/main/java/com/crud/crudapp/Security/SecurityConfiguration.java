@@ -2,6 +2,7 @@ package com.crud.crudapp.Security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -17,8 +18,17 @@ public class SecurityConfiguration {
 
 	@Bean
 	public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
-		UserDetails admin = User.withUsername("admin").password(passwordEncoder.encode("1")).build();
-		return new InMemoryUserDetailsManager(admin);
+		UserDetails admin = User
+				.withUsername("admin")
+				.password(passwordEncoder.encode("1"))
+				.authorities("BASIC", "SPECIAL")
+				.build();
+		UserDetails user = User
+				.withUsername("user")
+				.password(passwordEncoder.encode("2"))
+				.authorities("BASIC")
+				.build();
+		return new InMemoryUserDetailsManager(admin, user);
 	}
 
 	@Bean
@@ -34,6 +44,8 @@ public class SecurityConfiguration {
 				.permitAll()
 				.requestMatchers("/closed")
 				.authenticated()
+				.requestMatchers(HttpMethod.GET, "/special").hasAuthority("SPECIAL")
+				.requestMatchers(HttpMethod.GET, "/basic").hasAnyAuthority("SPECIAL", "BASIC")
 				.and()
 				.formLogin(Customizer.withDefaults())
 				.httpBasic(Customizer.withDefaults())

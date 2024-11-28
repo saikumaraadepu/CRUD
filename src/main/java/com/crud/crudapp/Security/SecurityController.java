@@ -15,4 +15,14 @@ public class SecurityController {
 	public String closed() {
 		return "Login is Required";
 	}
+
+	@GetMapping(path = "/special")
+	public String special() {
+		return "SPECIAL";
+	}
+
+	@GetMapping(path = "/basic")
+	public String basic() {
+		return "BASIC";
+	}
 }
