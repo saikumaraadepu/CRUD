@@ -2,8 +2,8 @@ package com.crud.crudapp.Security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +14,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfiguration {
 
 	@Bean
@@ -42,12 +43,14 @@ public class SecurityConfiguration {
 	public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 		return httpSecurity
 				.authorizeRequests()
-				.requestMatchers("/open")
-				.permitAll()
-				.requestMatchers("/closed")
+				.anyRequest()
 				.authenticated()
-				.requestMatchers(HttpMethod.GET, "/special").hasRole("ADMIN")
-				.requestMatchers(HttpMethod.GET, "/basic").hasAnyRole("ADMIN", "USER")
+//				.requestMatchers("/open")
+//				.permitAll()
+//				.requestMatchers("/closed")
+//				.authenticated()
+//				.requestMatchers(HttpMethod.GET, "/special").hasRole("ADMIN")
+//				.requestMatchers(HttpMethod.GET, "/basic").hasAnyRole("ADMIN", "USER")
 				.and()
 				.formLogin(Customizer.withDefaults())
 				.httpBasic(Customizer.withDefaults())
