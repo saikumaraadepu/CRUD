@@ -21,12 +21,14 @@ public class SecurityConfiguration {
 		UserDetails admin = User
 				.withUsername("admin")
 				.password(passwordEncoder.encode("1"))
-				.authorities("BASIC", "SPECIAL")
+				.roles("ADMIN", "USER")
+//				.authorities("BASIC", "SPECIAL")
 				.build();
 		UserDetails user = User
 				.withUsername("user")
 				.password(passwordEncoder.encode("2"))
-				.authorities("BASIC")
+				.roles("USER")
+//				.authorities("BASIC")
 				.build();
 		return new InMemoryUserDetailsManager(admin, user);
 	}
@@ -44,8 +46,8 @@ public class SecurityConfiguration {
 				.permitAll()
 				.requestMatchers("/closed")
 				.authenticated()
-				.requestMatchers(HttpMethod.GET, "/special").hasAuthority("SPECIAL")
-				.requestMatchers(HttpMethod.GET, "/basic").hasAnyAuthority("SPECIAL", "BASIC")
+				.requestMatchers(HttpMethod.GET, "/special").hasRole("ADMIN")
+				.requestMatchers(HttpMethod.GET, "/basic").hasAnyRole("ADMIN", "USER")
 				.and()
 				.formLogin(Customizer.withDefaults())
 				.httpBasic(Customizer.withDefaults())
