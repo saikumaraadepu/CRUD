@@ -1,10 +1,7 @@
-2024-11-27T11:14:43.121+05:30 ERROR 10628 --- [CRUDapp] [http-nio-8080-exec-2] c.c.c.P.c.CreateProductCommandHandler    : Product name is empty
-2024-11-27T11:14:43.126+05:30 ERROR 10628 --- [CRUDapp] [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: CustomBaseException(status=400 BAD_REQUEST, simpleResponse=SimpleResponse(message=Product name cannot be empty))] with root cause
+2024-11-28T08:47:30.703+05:30 ERROR 4856 --- [CRUDapp] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "String.hashCode()" because "<local2>" is null] with root cause
 
-com.crud.crudapp.Exceptions.ProductNotValidException: null
-	at com.crud.crudapp.Product.commandhandlers.CreateProductCommandHandler.validateProduct(CreateProductCommandHandler.java:37) ~[classes/:na]
-	at com.crud.crudapp.Product.commandhandlers.CreateProductCommandHandler.execute(CreateProductCommandHandler.java:28) ~[classes/:na]
-	at com.crud.crudapp.Product.ProductController.createProduct(ProductController.java:67) ~[classes/:na]
+java.lang.NullPointerException: Cannot invoke "String.hashCode()" because "<local2>" is null
+	at com.crud.crudapp.Headers.HeaderController.getRegionalRequest(HeaderController.java:13) ~[classes/:na]
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
@@ -16,8 +13,8 @@ com.crud.crudapp.Exceptions.ProductNotValidException: null
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.31.jar:6.0]
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
