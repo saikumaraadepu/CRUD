@@ -1,717 +1,117 @@
-2024-11-28T08:47:30.703+05:30 ERROR 4856 --- [CRUDapp] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "String.hashCode()" because "<local2>" is null] with root cause
-
-java.lang.NullPointerException: Cannot invoke "String.hashCode()" because "<local2>" is null
-	at com.crud.crudapp.Headers.HeaderController.getRegionalRequest(HeaderController.java:13) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.31.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:113) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-
-2024-11-28T12:28:21.613+05:30  INFO 2776 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Starting CRUDApplication using Java 21.0.4 with PID 2776 (D:\Saikumar\Desktop\Java PDF Notes\CRUDapp\target\classes started by Saikumar in D:\Saikumar\Desktop\Java PDF Notes\CRUDapp)
-2024-11-28T12:28:21.616+05:30  INFO 2776 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-11-28T12:28:23.200+05:30  INFO 2776 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T12:28:23.201+05:30  INFO 2776 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-11-28T12:28:23.252+05:30  INFO 2776 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.CatFactEntity.CatFactRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:28:23.254+05:30  INFO 2776 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:28:23.256+05:30  INFO 2776 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Order.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:28:23.259+05:30  INFO 2776 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Product.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:28:23.259+05:30  INFO 2776 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 0 JDBC repository interfaces.
-2024-11-28T12:28:23.274+05:30  INFO 2776 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T12:28:23.277+05:30  INFO 2776 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-11-28T12:28:23.349+05:30  INFO 2776 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 4 JPA repository interfaces.
-2024-11-28T12:28:24.329+05:30  INFO 2776 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-11-28T12:28:24.343+05:30  INFO 2776 --- [CRUDapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-11-28T12:28:24.343+05:30  INFO 2776 --- [CRUDapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2024-11-28T12:28:24.404+05:30  INFO 2776 --- [CRUDapp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-11-28T12:28:24.406+05:30  INFO 2776 --- [CRUDapp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2728 ms
-2024-11-28T12:28:24.811+05:30  INFO 2776 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-11-28T12:28:25.238+05:30  INFO 2776 --- [CRUDapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@857f74a
-2024-11-28T12:28:25.240+05:30  INFO 2776 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-11-28T12:28:25.298+05:30  INFO 2776 --- [CRUDapp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-11-28T12:28:25.362+05:30  INFO 2776 --- [CRUDapp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-11-28T12:28:25.397+05:30  INFO 2776 --- [CRUDapp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-11-28T12:28:25.788+05:30  INFO 2776 --- [CRUDapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-11-28T12:28:26.950+05:30  INFO 2776 --- [CRUDapp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-11-28T12:28:26.954+05:30  INFO 2776 --- [CRUDapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T12:28:27.461+05:30  INFO 2776 --- [CRUDapp] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-11-28T12:28:28.062+05:30  WARN 2776 --- [CRUDapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-11-28T12:28:28.988+05:30  WARN 2776 --- [CRUDapp] [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 1d751ab9-5d53-4711-b8c3-43375291ce56
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2024-11-28T12:28:29.005+05:30  INFO 2776 --- [CRUDapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2024-11-28T12:28:29.142+05:30  INFO 2776 --- [CRUDapp] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2024-11-28T12:28:29.477+05:30  INFO 2776 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-11-28T12:28:29.494+05:30  INFO 2776 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Started CRUDApplication in 8.408 seconds (process running for 9.218)
-2024-11-28T12:28:29.757+05:30  INFO 2776 --- [CRUDapp] [RMI TCP Connection(1)-192.168.184.142] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-11-28T12:28:29.757+05:30  INFO 2776 --- [CRUDapp] [RMI TCP Connection(1)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-11-28T12:28:29.759+05:30  INFO 2776 --- [CRUDapp] [RMI TCP Connection(1)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-11-28T12:34:01.441+05:30  INFO 2776 --- [CRUDapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T12:34:01.444+05:30  INFO 2776 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-11-28T12:34:01.453+05:30  INFO 2776 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-11-28T12:34:04.715+05:30  INFO 9724 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Starting CRUDApplication using Java 21.0.4 with PID 9724 (D:\Saikumar\Desktop\Java PDF Notes\CRUDapp\target\classes started by Saikumar in D:\Saikumar\Desktop\Java PDF Notes\CRUDapp)
-2024-11-28T12:34:04.717+05:30  INFO 9724 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-11-28T12:34:06.145+05:30  INFO 9724 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T12:34:06.146+05:30  INFO 9724 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-11-28T12:34:06.181+05:30  INFO 9724 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.CatFactEntity.CatFactRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:34:06.183+05:30  INFO 9724 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:34:06.184+05:30  INFO 9724 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Order.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:34:06.186+05:30  INFO 9724 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Product.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:34:06.186+05:30  INFO 9724 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 0 JDBC repository interfaces.
-2024-11-28T12:34:06.195+05:30  INFO 9724 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T12:34:06.196+05:30  INFO 9724 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-11-28T12:34:06.235+05:30  INFO 9724 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 4 JPA repository interfaces.
-2024-11-28T12:34:07.100+05:30  INFO 9724 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-11-28T12:34:07.114+05:30  INFO 9724 --- [CRUDapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-11-28T12:34:07.114+05:30  INFO 9724 --- [CRUDapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2024-11-28T12:34:07.169+05:30  INFO 9724 --- [CRUDapp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-11-28T12:34:07.170+05:30  INFO 9724 --- [CRUDapp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2395 ms
-2024-11-28T12:34:07.515+05:30  INFO 9724 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-11-28T12:34:07.886+05:30  INFO 9724 --- [CRUDapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c2aab92
-2024-11-28T12:34:07.888+05:30  INFO 9724 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-11-28T12:34:07.934+05:30  INFO 9724 --- [CRUDapp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-11-28T12:34:07.996+05:30  INFO 9724 --- [CRUDapp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-11-28T12:34:08.041+05:30  INFO 9724 --- [CRUDapp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-11-28T12:34:08.426+05:30  INFO 9724 --- [CRUDapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-11-28T12:34:09.682+05:30  INFO 9724 --- [CRUDapp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-11-28T12:34:09.685+05:30  INFO 9724 --- [CRUDapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T12:34:10.236+05:30  INFO 9724 --- [CRUDapp] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-11-28T12:34:10.889+05:30  WARN 9724 --- [CRUDapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-11-28T12:34:11.960+05:30  INFO 9724 --- [CRUDapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2024-11-28T12:34:12.102+05:30  INFO 9724 --- [CRUDapp] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2024-11-28T12:34:12.493+05:30  INFO 9724 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-11-28T12:34:12.512+05:30  INFO 9724 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Started CRUDApplication in 8.374 seconds (process running for 9.22)
-2024-11-28T12:34:12.590+05:30  INFO 9724 --- [CRUDapp] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-11-28T12:34:12.591+05:30  INFO 9724 --- [CRUDapp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-11-28T12:34:12.594+05:30  INFO 9724 --- [CRUDapp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-11-28T12:38:45.760+05:30  INFO 9724 --- [CRUDapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T12:38:45.765+05:30  INFO 9724 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-11-28T12:38:45.777+05:30  INFO 9724 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-11-28T12:40:49.373+05:30  INFO 5264 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Starting CRUDApplication using Java 21.0.4 with PID 5264 (D:\Saikumar\Desktop\Java PDF Notes\CRUDapp\target\classes started by Saikumar in D:\Saikumar\Desktop\Java PDF Notes\CRUDapp)
-2024-11-28T12:40:49.376+05:30  INFO 5264 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-11-28T12:40:50.565+05:30  INFO 5264 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T12:40:50.567+05:30  INFO 5264 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-11-28T12:40:50.601+05:30  INFO 5264 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.CatFactEntity.CatFactRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:40:50.603+05:30  INFO 5264 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:40:50.605+05:30  INFO 5264 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Order.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:40:50.607+05:30  INFO 5264 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Product.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:40:50.608+05:30  INFO 5264 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 0 JDBC repository interfaces.
-2024-11-28T12:40:50.618+05:30  INFO 5264 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T12:40:50.619+05:30  INFO 5264 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-11-28T12:40:50.662+05:30  INFO 5264 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 4 JPA repository interfaces.
-2024-11-28T12:40:51.493+05:30  INFO 5264 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-11-28T12:40:51.506+05:30  INFO 5264 --- [CRUDapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-11-28T12:40:51.506+05:30  INFO 5264 --- [CRUDapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2024-11-28T12:40:51.568+05:30  INFO 5264 --- [CRUDapp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-11-28T12:40:51.568+05:30  INFO 5264 --- [CRUDapp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2119 ms
-2024-11-28T12:40:51.908+05:30  INFO 5264 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-11-28T12:40:52.251+05:30  INFO 5264 --- [CRUDapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7ee64b53
-2024-11-28T12:40:52.253+05:30  INFO 5264 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-11-28T12:40:52.293+05:30  INFO 5264 --- [CRUDapp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-11-28T12:40:52.343+05:30  INFO 5264 --- [CRUDapp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-11-28T12:40:52.374+05:30  INFO 5264 --- [CRUDapp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-11-28T12:40:52.705+05:30  INFO 5264 --- [CRUDapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-11-28T12:40:53.751+05:30  INFO 5264 --- [CRUDapp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-11-28T12:40:53.754+05:30  INFO 5264 --- [CRUDapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T12:40:54.219+05:30  INFO 5264 --- [CRUDapp] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-11-28T12:40:54.755+05:30  WARN 5264 --- [CRUDapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-11-28T12:40:55.614+05:30  INFO 5264 --- [CRUDapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-2024-11-28T12:40:55.738+05:30  INFO 5264 --- [CRUDapp] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2024-11-28T12:40:56.052+05:30  INFO 5264 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-11-28T12:40:56.068+05:30  INFO 5264 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Started CRUDApplication in 7.309 seconds (process running for 8.129)
-2024-11-28T12:40:56.409+05:30  INFO 5264 --- [CRUDapp] [RMI TCP Connection(3)-192.168.184.142] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-11-28T12:40:56.409+05:30  INFO 5264 --- [CRUDapp] [RMI TCP Connection(3)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-11-28T12:40:56.411+05:30  INFO 5264 --- [CRUDapp] [RMI TCP Connection(3)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-11-28T12:41:08.901+05:30 ERROR 5264 --- [CRUDapp] [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
-
-java.lang.IllegalArgumentException: You have entered a password with no PasswordEncoder. If that is your intent, it should be prefixed with `{noop}`.
-	at org.springframework.security.crypto.password.DelegatingPasswordEncoder$UnmappedIdPasswordEncoder.matches(DelegatingPasswordEncoder.java:296) ~[spring-security-crypto-6.3.4.jar:6.3.4]
-	at org.springframework.security.crypto.password.DelegatingPasswordEncoder.matches(DelegatingPasswordEncoder.java:241) ~[spring-security-crypto-6.3.4.jar:6.3.4]
-	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.additionalAuthenticationChecks(DaoAuthenticationProvider.java:90) ~[spring-security-core-6.3.4.jar:6.3.4]
-	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:147) ~[spring-security-core-6.3.4.jar:6.3.4]
-	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182) ~[spring-security-core-6.3.4.jar:6.3.4]
-	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:201) ~[spring-security-core-6.3.4.jar:6.3.4]
-	at org.springframework.security.authentication.ObservationAuthenticationManager.lambda$authenticate$1(ObservationAuthenticationManager.java:54) ~[spring-security-core-6.3.4.jar:6.3.4]
-	at io.micrometer.observation.Observation.observe(Observation.java:565) ~[micrometer-observation-1.13.6.jar:1.13.6]
-	at org.springframework.security.authentication.ObservationAuthenticationManager.authenticate(ObservationAuthenticationManager.java:53) ~[spring-security-core-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:85) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:231) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:131) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:113) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-
-2024-11-28T12:41:12.758+05:30 ERROR 5264 --- [CRUDapp] [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
-
-java.lang.IllegalArgumentException: You have entered a password with no PasswordEncoder. If that is your intent, it should be prefixed with `{noop}`.
-	at org.springframework.security.crypto.password.DelegatingPasswordEncoder$UnmappedIdPasswordEncoder.matches(DelegatingPasswordEncoder.java:296) ~[spring-security-crypto-6.3.4.jar:6.3.4]
-	at org.springframework.security.crypto.password.DelegatingPasswordEncoder.matches(DelegatingPasswordEncoder.java:241) ~[spring-security-crypto-6.3.4.jar:6.3.4]
-	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.additionalAuthenticationChecks(DaoAuthenticationProvider.java:90) ~[spring-security-core-6.3.4.jar:6.3.4]
-	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:147) ~[spring-security-core-6.3.4.jar:6.3.4]
-	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182) ~[spring-security-core-6.3.4.jar:6.3.4]
-	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:201) ~[spring-security-core-6.3.4.jar:6.3.4]
-	at org.springframework.security.authentication.ObservationAuthenticationManager.lambda$authenticate$1(ObservationAuthenticationManager.java:54) ~[spring-security-core-6.3.4.jar:6.3.4]
-	at io.micrometer.observation.Observation.observe(Observation.java:565) ~[micrometer-observation-1.13.6.jar:1.13.6]
-	at org.springframework.security.authentication.ObservationAuthenticationManager.authenticate(ObservationAuthenticationManager.java:53) ~[spring-security-core-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:85) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:231) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:131) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:113) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-
-2024-11-28T12:41:57.487+05:30  INFO 5264 --- [CRUDapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T12:41:57.490+05:30  INFO 5264 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-11-28T12:41:57.498+05:30  INFO 5264 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-11-28T12:42:18.952+05:30  INFO 11068 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Starting CRUDApplication using Java 21.0.4 with PID 11068 (D:\Saikumar\Desktop\Java PDF Notes\CRUDapp\target\classes started by Saikumar in D:\Saikumar\Desktop\Java PDF Notes\CRUDapp)
-2024-11-28T12:42:18.955+05:30  INFO 11068 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-11-28T12:42:19.993+05:30  INFO 11068 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T12:42:19.994+05:30  INFO 11068 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-11-28T12:42:20.030+05:30  INFO 11068 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.CatFactEntity.CatFactRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:42:20.032+05:30  INFO 11068 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:42:20.033+05:30  INFO 11068 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Order.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:42:20.035+05:30  INFO 11068 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Product.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:42:20.035+05:30  INFO 11068 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 0 JDBC repository interfaces.
-2024-11-28T12:42:20.044+05:30  INFO 11068 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T12:42:20.046+05:30  INFO 11068 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-11-28T12:42:20.088+05:30  INFO 11068 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 4 JPA repository interfaces.
-2024-11-28T12:42:21.083+05:30  INFO 11068 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-11-28T12:42:21.105+05:30  INFO 11068 --- [CRUDapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-11-28T12:42:21.105+05:30  INFO 11068 --- [CRUDapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2024-11-28T12:42:21.212+05:30  INFO 11068 --- [CRUDapp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-11-28T12:42:21.213+05:30  INFO 11068 --- [CRUDapp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2204 ms
-2024-11-28T12:42:21.670+05:30  INFO 11068 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-11-28T12:42:22.138+05:30  INFO 11068 --- [CRUDapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c2aab92
-2024-11-28T12:42:22.141+05:30  INFO 11068 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-11-28T12:42:22.209+05:30  INFO 11068 --- [CRUDapp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-11-28T12:42:22.310+05:30  INFO 11068 --- [CRUDapp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-11-28T12:42:22.395+05:30  INFO 11068 --- [CRUDapp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-11-28T12:42:22.836+05:30  INFO 11068 --- [CRUDapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-11-28T12:42:24.024+05:30  INFO 11068 --- [CRUDapp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-11-28T12:42:24.028+05:30  INFO 11068 --- [CRUDapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T12:42:24.508+05:30  INFO 11068 --- [CRUDapp] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-11-28T12:42:25.028+05:30  WARN 11068 --- [CRUDapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-11-28T12:42:25.869+05:30  INFO 11068 --- [CRUDapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-2024-11-28T12:42:25.993+05:30  INFO 11068 --- [CRUDapp] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2024-11-28T12:42:26.329+05:30  INFO 11068 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-11-28T12:42:26.345+05:30  INFO 11068 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Started CRUDApplication in 7.884 seconds (process running for 8.656)
-2024-11-28T12:42:26.646+05:30  INFO 11068 --- [CRUDapp] [RMI TCP Connection(8)-192.168.184.142] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-11-28T12:42:26.646+05:30  INFO 11068 --- [CRUDapp] [RMI TCP Connection(8)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-11-28T12:42:26.648+05:30  INFO 11068 --- [CRUDapp] [RMI TCP Connection(8)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-11-28T12:43:23.191+05:30  INFO 11068 --- [CRUDapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T12:43:23.194+05:30  INFO 11068 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-11-28T12:43:23.201+05:30  INFO 11068 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-11-28T12:43:27.781+05:30  INFO 1636 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Starting CRUDApplication using Java 21.0.4 with PID 1636 (D:\Saikumar\Desktop\Java PDF Notes\CRUDapp\target\classes started by Saikumar in D:\Saikumar\Desktop\Java PDF Notes\CRUDapp)
-2024-11-28T12:43:27.784+05:30  INFO 1636 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-11-28T12:43:29.219+05:30  INFO 1636 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T12:43:29.220+05:30  INFO 1636 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-11-28T12:43:29.257+05:30  INFO 1636 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.CatFactEntity.CatFactRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:43:29.258+05:30  INFO 1636 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:43:29.260+05:30  INFO 1636 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Order.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:43:29.264+05:30  INFO 1636 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Product.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T12:43:29.265+05:30  INFO 1636 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 0 JDBC repository interfaces.
-2024-11-28T12:43:29.276+05:30  INFO 1636 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T12:43:29.277+05:30  INFO 1636 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-11-28T12:43:29.315+05:30  INFO 1636 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 4 JPA repository interfaces.
-2024-11-28T12:43:30.137+05:30  INFO 1636 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-11-28T12:43:30.150+05:30  INFO 1636 --- [CRUDapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-11-28T12:43:30.150+05:30  INFO 1636 --- [CRUDapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2024-11-28T12:43:30.219+05:30  INFO 1636 --- [CRUDapp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-11-28T12:43:30.220+05:30  INFO 1636 --- [CRUDapp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2378 ms
-2024-11-28T12:43:30.564+05:30  INFO 1636 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-11-28T12:43:30.916+05:30  INFO 1636 --- [CRUDapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3a4f8e8a
-2024-11-28T12:43:30.920+05:30  INFO 1636 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-11-28T12:43:30.966+05:30  INFO 1636 --- [CRUDapp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-11-28T12:43:31.019+05:30  INFO 1636 --- [CRUDapp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-11-28T12:43:31.058+05:30  INFO 1636 --- [CRUDapp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-11-28T12:43:31.393+05:30  INFO 1636 --- [CRUDapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-11-28T12:43:32.399+05:30  INFO 1636 --- [CRUDapp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-11-28T12:43:32.402+05:30  INFO 1636 --- [CRUDapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T12:43:32.863+05:30  INFO 1636 --- [CRUDapp] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-11-28T12:43:33.534+05:30  WARN 1636 --- [CRUDapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-11-28T12:43:34.395+05:30  INFO 1636 --- [CRUDapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-2024-11-28T12:43:34.530+05:30  INFO 1636 --- [CRUDapp] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2024-11-28T12:43:34.851+05:30  INFO 1636 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-11-28T12:43:34.869+05:30  INFO 1636 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Started CRUDApplication in 7.613 seconds (process running for 8.407)
-2024-11-28T12:43:35.353+05:30  INFO 1636 --- [CRUDapp] [RMI TCP Connection(4)-192.168.184.142] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-11-28T12:43:35.354+05:30  INFO 1636 --- [CRUDapp] [RMI TCP Connection(4)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-11-28T12:43:35.356+05:30  INFO 1636 --- [CRUDapp] [RMI TCP Connection(4)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-11-28T12:44:36.146+05:30  INFO 1636 --- [CRUDapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T12:44:36.149+05:30  INFO 1636 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-11-28T12:44:36.159+05:30  INFO 1636 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-11-28T18:55:39.816+05:30  INFO 3644 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Starting CRUDApplication using Java 21.0.4 with PID 3644 (D:\Saikumar\Desktop\Java PDF Notes\CRUDapp\target\classes started by Saikumar in D:\Saikumar\Desktop\Java PDF Notes\CRUDapp)
-2024-11-28T18:55:39.820+05:30  INFO 3644 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-11-28T18:55:41.193+05:30  INFO 3644 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T18:55:41.196+05:30  INFO 3644 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-11-28T18:55:41.241+05:30  INFO 3644 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.CatFactEntity.CatFactRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T18:55:41.243+05:30  INFO 3644 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T18:55:41.244+05:30  INFO 3644 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Order.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T18:55:41.246+05:30  INFO 3644 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Product.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T18:55:41.247+05:30  INFO 3644 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 0 JDBC repository interfaces.
-2024-11-28T18:55:41.265+05:30  INFO 3644 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T18:55:41.266+05:30  INFO 3644 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-11-28T18:55:41.311+05:30  INFO 3644 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 4 JPA repository interfaces.
-2024-11-28T18:55:42.794+05:30  INFO 3644 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-11-28T18:55:42.816+05:30  INFO 3644 --- [CRUDapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-11-28T18:55:42.816+05:30  INFO 3644 --- [CRUDapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2024-11-28T18:55:42.916+05:30  INFO 3644 --- [CRUDapp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-11-28T18:55:42.917+05:30  INFO 3644 --- [CRUDapp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3006 ms
-2024-11-28T18:55:43.301+05:30  INFO 3644 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-11-28T18:55:44.015+05:30  INFO 3644 --- [CRUDapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1308ef19
-2024-11-28T18:55:44.018+05:30  INFO 3644 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-11-28T18:55:44.100+05:30  INFO 3644 --- [CRUDapp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-11-28T18:55:44.213+05:30  INFO 3644 --- [CRUDapp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-11-28T18:55:44.274+05:30  INFO 3644 --- [CRUDapp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-11-28T18:55:44.764+05:30  INFO 3644 --- [CRUDapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-11-28T18:55:46.183+05:30  INFO 3644 --- [CRUDapp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-11-28T18:55:46.187+05:30  INFO 3644 --- [CRUDapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T18:55:46.781+05:30  INFO 3644 --- [CRUDapp] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-11-28T18:55:47.534+05:30  WARN 3644 --- [CRUDapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-11-28T18:55:47.596+05:30  INFO 3644 --- [CRUDapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-2024-11-28T18:55:48.176+05:30  INFO 3644 --- [CRUDapp] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2024-11-28T18:55:49.275+05:30  INFO 3644 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-11-28T18:55:49.296+05:30  INFO 3644 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Started CRUDApplication in 10.072 seconds (process running for 11.108)
-2024-11-28T18:55:49.932+05:30  INFO 3644 --- [CRUDapp] [RMI TCP Connection(2)-192.168.184.142] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-11-28T18:55:49.932+05:30  INFO 3644 --- [CRUDapp] [RMI TCP Connection(2)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-11-28T18:55:49.935+05:30  INFO 3644 --- [CRUDapp] [RMI TCP Connection(2)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2024-11-28T19:01:54.630+05:30  INFO 3644 --- [CRUDapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T19:01:54.634+05:30  INFO 3644 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-11-28T19:01:54.650+05:30  INFO 3644 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-11-28T19:02:00.522+05:30  INFO 9512 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Starting CRUDApplication using Java 21.0.4 with PID 9512 (D:\Saikumar\Desktop\Java PDF Notes\CRUDapp\target\classes started by Saikumar in D:\Saikumar\Desktop\Java PDF Notes\CRUDapp)
-2024-11-28T19:02:00.525+05:30  INFO 9512 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-11-28T19:02:01.796+05:30  INFO 9512 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T19:02:01.796+05:30  INFO 9512 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-11-28T19:02:01.850+05:30  INFO 9512 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.CatFactEntity.CatFactRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:02:01.853+05:30  INFO 9512 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:02:01.858+05:30  INFO 9512 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Order.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:02:01.861+05:30  INFO 9512 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Product.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:02:01.866+05:30  INFO 9512 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 0 JDBC repository interfaces.
-2024-11-28T19:02:01.893+05:30  INFO 9512 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T19:02:01.895+05:30  INFO 9512 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-11-28T19:02:01.947+05:30  INFO 9512 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 4 JPA repository interfaces.
-2024-11-28T19:02:02.987+05:30  INFO 9512 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-11-28T19:02:03.005+05:30  INFO 9512 --- [CRUDapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-11-28T19:02:03.006+05:30  INFO 9512 --- [CRUDapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2024-11-28T19:02:03.072+05:30  INFO 9512 --- [CRUDapp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-11-28T19:02:03.072+05:30  INFO 9512 --- [CRUDapp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2478 ms
-2024-11-28T19:02:03.542+05:30  INFO 9512 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-11-28T19:02:03.955+05:30  INFO 9512 --- [CRUDapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@137a4b54
-2024-11-28T19:02:03.956+05:30  INFO 9512 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-11-28T19:02:04.010+05:30  INFO 9512 --- [CRUDapp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-11-28T19:02:04.071+05:30  INFO 9512 --- [CRUDapp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-11-28T19:02:04.111+05:30  INFO 9512 --- [CRUDapp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-11-28T19:02:04.538+05:30  INFO 9512 --- [CRUDapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-11-28T19:02:05.771+05:30  INFO 9512 --- [CRUDapp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-11-28T19:02:05.774+05:30  INFO 9512 --- [CRUDapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T19:02:06.320+05:30  INFO 9512 --- [CRUDapp] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-11-28T19:02:07.128+05:30  WARN 9512 --- [CRUDapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-11-28T19:02:07.272+05:30  INFO 9512 --- [CRUDapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-2024-11-28T19:02:07.977+05:30  INFO 9512 --- [CRUDapp] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2024-11-28T19:02:08.900+05:30  INFO 9512 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-11-28T19:02:08.917+05:30  INFO 9512 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Started CRUDApplication in 9.01 seconds (process running for 9.933)
-2024-11-28T19:02:09.518+05:30  INFO 9512 --- [CRUDapp] [RMI TCP Connection(4)-192.168.184.142] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-11-28T19:02:09.519+05:30  INFO 9512 --- [CRUDapp] [RMI TCP Connection(4)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-11-28T19:02:09.523+05:30  INFO 9512 --- [CRUDapp] [RMI TCP Connection(4)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2024-11-28T19:02:25.281+05:30  INFO 9512 --- [CRUDapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T19:02:25.284+05:30  INFO 9512 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-11-28T19:02:25.301+05:30  INFO 9512 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-11-28T19:14:44.171+05:30  INFO 16584 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Starting CRUDApplication using Java 21.0.4 with PID 16584 (D:\Saikumar\Desktop\Java PDF Notes\CRUDapp\target\classes started by Saikumar in D:\Saikumar\Desktop\Java PDF Notes\CRUDapp)
-2024-11-28T19:14:44.174+05:30  INFO 16584 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-11-28T19:14:45.326+05:30  INFO 16584 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T19:14:45.329+05:30  INFO 16584 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-11-28T19:14:45.382+05:30  INFO 16584 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.CatFactEntity.CatFactRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:14:45.384+05:30  INFO 16584 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:14:45.386+05:30  INFO 16584 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Order.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:14:45.388+05:30  INFO 16584 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Product.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:14:45.389+05:30  INFO 16584 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 0 JDBC repository interfaces.
-2024-11-28T19:14:45.400+05:30  INFO 16584 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T19:14:45.402+05:30  INFO 16584 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-11-28T19:14:45.457+05:30  INFO 16584 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 4 JPA repository interfaces.
-2024-11-28T19:14:46.393+05:30  INFO 16584 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-11-28T19:14:46.409+05:30  INFO 16584 --- [CRUDapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-11-28T19:14:46.409+05:30  INFO 16584 --- [CRUDapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2024-11-28T19:14:46.462+05:30  INFO 16584 --- [CRUDapp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-11-28T19:14:46.463+05:30  INFO 16584 --- [CRUDapp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2231 ms
-2024-11-28T19:14:46.808+05:30  INFO 16584 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-11-28T19:14:47.239+05:30  INFO 16584 --- [CRUDapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1acc873b
-2024-11-28T19:14:47.242+05:30  INFO 16584 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-11-28T19:14:47.301+05:30  INFO 16584 --- [CRUDapp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-11-28T19:14:47.360+05:30  INFO 16584 --- [CRUDapp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-11-28T19:14:47.390+05:30  INFO 16584 --- [CRUDapp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-11-28T19:14:47.718+05:30  INFO 16584 --- [CRUDapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-11-28T19:14:48.790+05:30  INFO 16584 --- [CRUDapp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-11-28T19:14:48.793+05:30  INFO 16584 --- [CRUDapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T19:14:49.255+05:30  INFO 16584 --- [CRUDapp] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-11-28T19:14:49.992+05:30  WARN 16584 --- [CRUDapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-11-28T19:14:50.057+05:30  INFO 16584 --- [CRUDapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-2024-11-28T19:14:50.640+05:30  INFO 16584 --- [CRUDapp] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2024-11-28T19:14:51.536+05:30  INFO 16584 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-11-28T19:14:51.559+05:30  INFO 16584 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Started CRUDApplication in 7.88 seconds (process running for 8.617)
-2024-11-28T19:14:51.867+05:30  INFO 16584 --- [CRUDapp] [RMI TCP Connection(1)-192.168.184.142] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-11-28T19:14:51.867+05:30  INFO 16584 --- [CRUDapp] [RMI TCP Connection(1)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-11-28T19:14:51.870+05:30  INFO 16584 --- [CRUDapp] [RMI TCP Connection(1)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2024-11-28T19:21:52.682+05:30  INFO 16584 --- [CRUDapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T19:21:52.687+05:30  INFO 16584 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-11-28T19:21:52.697+05:30  INFO 16584 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-11-28T19:21:59.466+05:30  INFO 11068 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Starting CRUDApplication using Java 21.0.4 with PID 11068 (D:\Saikumar\Desktop\Java PDF Notes\CRUDapp\target\classes started by Saikumar in D:\Saikumar\Desktop\Java PDF Notes\CRUDapp)
-2024-11-28T19:21:59.468+05:30  INFO 11068 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-11-28T19:22:00.826+05:30  INFO 11068 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T19:22:00.827+05:30  INFO 11068 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-11-28T19:22:00.869+05:30  INFO 11068 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.CatFactEntity.CatFactRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:22:00.870+05:30  INFO 11068 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:22:00.872+05:30  INFO 11068 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Order.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:22:00.874+05:30  INFO 11068 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Product.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:22:00.874+05:30  INFO 11068 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 0 JDBC repository interfaces.
-2024-11-28T19:22:00.884+05:30  INFO 11068 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T19:22:00.885+05:30  INFO 11068 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-11-28T19:22:00.943+05:30  INFO 11068 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 4 JPA repository interfaces.
-2024-11-28T19:22:01.942+05:30  INFO 11068 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-11-28T19:22:01.959+05:30  INFO 11068 --- [CRUDapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-11-28T19:22:01.959+05:30  INFO 11068 --- [CRUDapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2024-11-28T19:22:02.025+05:30  INFO 11068 --- [CRUDapp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-11-28T19:22:02.025+05:30  INFO 11068 --- [CRUDapp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2462 ms
-2024-11-28T19:22:02.442+05:30  INFO 11068 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-11-28T19:22:02.891+05:30  INFO 11068 --- [CRUDapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6a2badb1
-2024-11-28T19:22:02.895+05:30  INFO 11068 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-11-28T19:22:02.970+05:30  INFO 11068 --- [CRUDapp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-11-28T19:22:03.034+05:30  INFO 11068 --- [CRUDapp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-11-28T19:22:03.073+05:30  INFO 11068 --- [CRUDapp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-11-28T19:22:03.518+05:30  INFO 11068 --- [CRUDapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-11-28T19:22:04.778+05:30  INFO 11068 --- [CRUDapp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-11-28T19:22:04.781+05:30  INFO 11068 --- [CRUDapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T19:22:05.332+05:30  INFO 11068 --- [CRUDapp] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-11-28T19:22:06.204+05:30  WARN 11068 --- [CRUDapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-11-28T19:22:06.287+05:30  INFO 11068 --- [CRUDapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-2024-11-28T19:22:06.964+05:30  INFO 11068 --- [CRUDapp] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2024-11-28T19:22:07.986+05:30  INFO 11068 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-11-28T19:22:08.007+05:30  INFO 11068 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Started CRUDApplication in 9.152 seconds (process running for 10.214)
-2024-11-28T19:22:08.468+05:30  INFO 11068 --- [CRUDapp] [RMI TCP Connection(3)-192.168.184.142] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-11-28T19:22:08.469+05:30  INFO 11068 --- [CRUDapp] [RMI TCP Connection(3)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-11-28T19:22:08.472+05:30  INFO 11068 --- [CRUDapp] [RMI TCP Connection(3)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2024-11-28T19:24:31.516+05:30  INFO 11068 --- [CRUDapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T19:24:31.519+05:30  INFO 11068 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-11-28T19:24:31.536+05:30  INFO 11068 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-11-28T19:29:45.471+05:30  INFO 6784 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Starting CRUDApplication using Java 21.0.4 with PID 6784 (D:\Saikumar\Desktop\Java PDF Notes\CRUDapp\target\classes started by Saikumar in D:\Saikumar\Desktop\Java PDF Notes\CRUDapp)
-2024-11-28T19:29:45.475+05:30  INFO 6784 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-11-28T19:29:48.117+05:30  INFO 6784 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T19:29:48.120+05:30  INFO 6784 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-11-28T19:29:48.195+05:30  INFO 6784 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.CatFactEntity.CatFactRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:29:48.199+05:30  INFO 6784 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:29:48.202+05:30  INFO 6784 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Order.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:29:48.205+05:30  INFO 6784 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Product.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:29:48.206+05:30  INFO 6784 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 0 JDBC repository interfaces.
-2024-11-28T19:29:48.223+05:30  INFO 6784 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T19:29:48.225+05:30  INFO 6784 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-11-28T19:29:48.308+05:30  INFO 6784 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 4 JPA repository interfaces.
-2024-11-28T19:29:50.007+05:30  INFO 6784 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-11-28T19:29:50.035+05:30  INFO 6784 --- [CRUDapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-11-28T19:29:50.036+05:30  INFO 6784 --- [CRUDapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2024-11-28T19:29:50.159+05:30  INFO 6784 --- [CRUDapp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-11-28T19:29:50.160+05:30  INFO 6784 --- [CRUDapp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4572 ms
-2024-11-28T19:29:50.809+05:30  INFO 6784 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-11-28T19:29:51.558+05:30  INFO 6784 --- [CRUDapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@48af5f38
-2024-11-28T19:29:51.562+05:30  INFO 6784 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-11-28T19:29:51.656+05:30  INFO 6784 --- [CRUDapp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-11-28T19:29:51.797+05:30  INFO 6784 --- [CRUDapp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-11-28T19:29:51.878+05:30  INFO 6784 --- [CRUDapp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-11-28T19:29:52.501+05:30  INFO 6784 --- [CRUDapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-11-28T19:29:54.636+05:30  INFO 6784 --- [CRUDapp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-11-28T19:29:54.642+05:30  INFO 6784 --- [CRUDapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T19:29:55.701+05:30  INFO 6784 --- [CRUDapp] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-11-28T19:29:57.439+05:30  WARN 6784 --- [CRUDapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-11-28T19:29:57.585+05:30  INFO 6784 --- [CRUDapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-2024-11-28T19:29:58.679+05:30  INFO 6784 --- [CRUDapp] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2024-11-28T19:30:00.530+05:30  INFO 6784 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-11-28T19:30:00.565+05:30  INFO 6784 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Started CRUDApplication in 16.006 seconds (process running for 17.263)
-2024-11-28T19:30:01.039+05:30  INFO 6784 --- [CRUDapp] [RMI TCP Connection(2)-192.168.184.142] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-11-28T19:30:01.040+05:30  INFO 6784 --- [CRUDapp] [RMI TCP Connection(2)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-11-28T19:30:01.043+05:30  INFO 6784 --- [CRUDapp] [RMI TCP Connection(2)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2024-11-28T19:30:52.661+05:30  INFO 6784 --- [CRUDapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T19:30:52.667+05:30  INFO 6784 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-11-28T19:30:52.684+05:30  INFO 6784 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-11-28T19:31:01.543+05:30  INFO 4640 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Starting CRUDApplication using Java 21.0.4 with PID 4640 (D:\Saikumar\Desktop\Java PDF Notes\CRUDapp\target\classes started by Saikumar in D:\Saikumar\Desktop\Java PDF Notes\CRUDapp)
-2024-11-28T19:31:01.546+05:30  INFO 4640 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-11-28T19:31:04.042+05:30  INFO 4640 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T19:31:04.047+05:30  INFO 4640 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-11-28T19:31:04.149+05:30  INFO 4640 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.CatFactEntity.CatFactRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:31:04.153+05:30  INFO 4640 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:31:04.157+05:30  INFO 4640 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Order.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:31:04.161+05:30  INFO 4640 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Product.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:31:04.163+05:30  INFO 4640 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98 ms. Found 0 JDBC repository interfaces.
-2024-11-28T19:31:04.180+05:30  INFO 4640 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T19:31:04.182+05:30  INFO 4640 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-11-28T19:31:04.260+05:30  INFO 4640 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 4 JPA repository interfaces.
-2024-11-28T19:31:06.650+05:30  INFO 4640 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-11-28T19:31:06.702+05:30  INFO 4640 --- [CRUDapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-11-28T19:31:06.703+05:30  INFO 4640 --- [CRUDapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2024-11-28T19:31:06.898+05:30  INFO 4640 --- [CRUDapp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-11-28T19:31:06.900+05:30  INFO 4640 --- [CRUDapp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5285 ms
-2024-11-28T19:31:07.604+05:30  INFO 4640 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-11-28T19:31:08.458+05:30  INFO 4640 --- [CRUDapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@571d0925
-2024-11-28T19:31:08.462+05:30  INFO 4640 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-11-28T19:31:08.531+05:30  INFO 4640 --- [CRUDapp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-11-28T19:31:08.595+05:30  INFO 4640 --- [CRUDapp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-11-28T19:31:08.630+05:30  INFO 4640 --- [CRUDapp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-11-28T19:31:09.186+05:30  INFO 4640 --- [CRUDapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-11-28T19:31:11.360+05:30  INFO 4640 --- [CRUDapp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-11-28T19:31:11.366+05:30  INFO 4640 --- [CRUDapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T19:31:12.181+05:30  INFO 4640 --- [CRUDapp] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-11-28T19:31:13.952+05:30  WARN 4640 --- [CRUDapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-11-28T19:31:14.064+05:30  INFO 4640 --- [CRUDapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-2024-11-28T19:31:15.294+05:30  INFO 4640 --- [CRUDapp] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2024-11-28T19:31:17.068+05:30  INFO 4640 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-11-28T19:31:17.106+05:30  INFO 4640 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Started CRUDApplication in 16.375 seconds (process running for 17.929)
-2024-11-28T19:31:17.433+05:30  INFO 4640 --- [CRUDapp] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-11-28T19:31:17.435+05:30  INFO 4640 --- [CRUDapp] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-11-28T19:31:17.445+05:30  INFO 4640 --- [CRUDapp] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
-2024-11-28T19:31:45.017+05:30  INFO 4640 --- [CRUDapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T19:31:45.027+05:30  INFO 4640 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-11-28T19:31:45.065+05:30  INFO 4640 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-11-28T19:40:11.562+05:30  INFO 4044 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Starting CRUDApplication using Java 21.0.4 with PID 4044 (D:\Saikumar\Desktop\Java PDF Notes\CRUDapp\target\classes started by Saikumar in D:\Saikumar\Desktop\Java PDF Notes\CRUDapp)
-2024-11-28T19:40:11.566+05:30  INFO 4044 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-11-28T19:40:13.940+05:30  INFO 4044 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T19:40:13.942+05:30  INFO 4044 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-11-28T19:40:14.003+05:30  INFO 4044 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.CatFactEntity.CatFactRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:40:14.006+05:30  INFO 4044 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:40:14.009+05:30  INFO 4044 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Order.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:40:14.012+05:30  INFO 4044 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Product.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-11-28T19:40:14.014+05:30  INFO 4044 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 0 JDBC repository interfaces.
-2024-11-28T19:40:14.031+05:30  INFO 4044 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-28T19:40:14.033+05:30  INFO 4044 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-11-28T19:40:14.116+05:30  INFO 4044 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 4 JPA repository interfaces.
-2024-11-28T19:40:15.560+05:30  INFO 4044 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-11-28T19:40:15.590+05:30  INFO 4044 --- [CRUDapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-11-28T19:40:15.591+05:30  INFO 4044 --- [CRUDapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2024-11-28T19:40:15.682+05:30  INFO 4044 --- [CRUDapp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-11-28T19:40:15.682+05:30  INFO 4044 --- [CRUDapp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4030 ms
-2024-11-28T19:40:16.179+05:30  INFO 4044 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-11-28T19:40:16.950+05:30  INFO 4044 --- [CRUDapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5bd3ca3c
-2024-11-28T19:40:16.954+05:30  INFO 4044 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-11-28T19:40:17.039+05:30  INFO 4044 --- [CRUDapp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-11-28T19:40:17.158+05:30  INFO 4044 --- [CRUDapp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-11-28T19:40:17.239+05:30  INFO 4044 --- [CRUDapp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-11-28T19:40:17.796+05:30  INFO 4044 --- [CRUDapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-11-28T19:40:19.592+05:30  INFO 4044 --- [CRUDapp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-11-28T19:40:19.596+05:30  INFO 4044 --- [CRUDapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T19:40:20.518+05:30  INFO 4044 --- [CRUDapp] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-11-28T19:40:21.775+05:30  WARN 4044 --- [CRUDapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-11-28T19:40:21.836+05:30  INFO 4044 --- [CRUDapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-2024-11-28T19:40:23.997+05:30  INFO 4044 --- [CRUDapp] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2024-11-28T19:40:24.195+05:30  INFO 4044 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-11-28T19:40:24.221+05:30  INFO 4044 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Started CRUDApplication in 13.371 seconds (process running for 14.775)
-2024-11-28T19:40:24.784+05:30  INFO 4044 --- [CRUDapp] [RMI TCP Connection(2)-192.168.184.142] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-11-28T19:40:24.785+05:30  INFO 4044 --- [CRUDapp] [RMI TCP Connection(2)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-11-28T19:40:24.788+05:30  INFO 4044 --- [CRUDapp] [RMI TCP Connection(2)-192.168.184.142] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2024-11-28T19:41:30.107+05:30  INFO 4044 --- [CRUDapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-11-28T19:41:30.117+05:30  INFO 4044 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-11-28T19:41:30.145+05:30  INFO 4044 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-29T09:00:09.287+05:30  INFO 3060 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Starting CRUDApplication using Java 21.0.4 with PID 3060 (D:\Saikumar\Desktop\Java PDF Notes\CRUDapp\target\classes started by Saikumar in D:\Saikumar\Desktop\Java PDF Notes\CRUDapp)
+2024-11-29T09:00:09.307+05:30  INFO 3060 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-11-29T09:00:10.753+05:30  INFO 3060 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-29T09:00:10.754+05:30  INFO 3060 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-11-29T09:00:10.807+05:30  INFO 3060 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.CatFactEntity.CatFactRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-11-29T09:00:10.810+05:30  INFO 3060 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-11-29T09:00:10.811+05:30  INFO 3060 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Order.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-11-29T09:00:10.813+05:30  INFO 3060 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Product.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-11-29T09:00:10.814+05:30  INFO 3060 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 0 JDBC repository interfaces.
+2024-11-29T09:00:10.824+05:30  INFO 3060 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-29T09:00:10.826+05:30  INFO 3060 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-29T09:00:10.878+05:30  INFO 3060 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 4 JPA repository interfaces.
+2024-11-29T09:00:12.018+05:30  INFO 3060 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-29T09:00:12.037+05:30  INFO 3060 --- [CRUDapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-29T09:00:12.039+05:30  INFO 3060 --- [CRUDapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-29T09:00:12.117+05:30  INFO 3060 --- [CRUDapp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-29T09:00:12.118+05:30  INFO 3060 --- [CRUDapp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2752 ms
+2024-11-29T09:00:12.558+05:30  INFO 3060 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-29T09:00:13.177+05:30  INFO 3060 --- [CRUDapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3de88f64
+2024-11-29T09:00:13.179+05:30  INFO 3060 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-29T09:00:13.243+05:30  INFO 3060 --- [CRUDapp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-29T09:00:13.358+05:30  INFO 3060 --- [CRUDapp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-29T09:00:13.427+05:30  INFO 3060 --- [CRUDapp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-29T09:00:13.869+05:30  INFO 3060 --- [CRUDapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-29T09:00:15.198+05:30  INFO 3060 --- [CRUDapp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-29T09:00:15.202+05:30  INFO 3060 --- [CRUDapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29T09:00:15.821+05:30  INFO 3060 --- [CRUDapp] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-29T09:00:16.672+05:30  WARN 3060 --- [CRUDapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-29T09:00:16.731+05:30  INFO 3060 --- [CRUDapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-11-29T09:00:17.384+05:30  INFO 3060 --- [CRUDapp] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-11-29T09:00:18.523+05:30  INFO 3060 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-29T09:00:18.542+05:30  INFO 3060 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Started CRUDApplication in 9.889 seconds (process running for 11.015)
+2024-11-29T09:00:19.132+05:30  INFO 3060 --- [CRUDapp] [RMI TCP Connection(2)-192.168.161.142] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-29T09:00:19.132+05:30  INFO 3060 --- [CRUDapp] [RMI TCP Connection(2)-192.168.161.142] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-29T09:00:19.135+05:30  INFO 3060 --- [CRUDapp] [RMI TCP Connection(2)-192.168.161.142] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-11-29T09:00:49.458+05:30  WARN 3060 --- [CRUDapp] [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity com.crud.crudapp.Security.SecurityController.login(com.crud.crudapp.Security.LoginRequest)]
+2024-11-29T09:05:58.706+05:30  INFO 3060 --- [CRUDapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29T09:05:58.709+05:30  INFO 3060 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-29T09:05:58.719+05:30  INFO 3060 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-29T09:22:41.708+05:30  INFO 6016 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Starting CRUDApplication using Java 21.0.4 with PID 6016 (D:\Saikumar\Desktop\Java PDF Notes\CRUDapp\target\classes started by Saikumar in D:\Saikumar\Desktop\Java PDF Notes\CRUDapp)
+2024-11-29T09:22:41.713+05:30  INFO 6016 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-11-29T09:22:43.120+05:30  INFO 6016 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-29T09:22:43.121+05:30  INFO 6016 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-11-29T09:22:43.169+05:30  INFO 6016 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.CatFactEntity.CatFactRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-11-29T09:22:43.172+05:30  INFO 6016 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-11-29T09:22:43.173+05:30  INFO 6016 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Order.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-11-29T09:22:43.175+05:30  INFO 6016 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Product.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-11-29T09:22:43.175+05:30  INFO 6016 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 0 JDBC repository interfaces.
+2024-11-29T09:22:43.195+05:30  INFO 6016 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-29T09:22:43.196+05:30  INFO 6016 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-29T09:22:43.242+05:30  INFO 6016 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 4 JPA repository interfaces.
+2024-11-29T09:22:44.442+05:30  INFO 6016 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-29T09:22:44.465+05:30  INFO 6016 --- [CRUDapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-29T09:22:44.466+05:30  INFO 6016 --- [CRUDapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-29T09:22:44.576+05:30  INFO 6016 --- [CRUDapp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-29T09:22:44.577+05:30  INFO 6016 --- [CRUDapp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2801 ms
+2024-11-29T09:22:45.005+05:30  INFO 6016 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-29T09:22:45.506+05:30  INFO 6016 --- [CRUDapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4fbe486c
+2024-11-29T09:22:45.507+05:30  INFO 6016 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-29T09:22:45.561+05:30  INFO 6016 --- [CRUDapp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-29T09:22:45.649+05:30  INFO 6016 --- [CRUDapp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-29T09:22:45.707+05:30  INFO 6016 --- [CRUDapp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-29T09:22:46.141+05:30  INFO 6016 --- [CRUDapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-29T09:22:47.450+05:30  INFO 6016 --- [CRUDapp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-29T09:22:47.454+05:30  INFO 6016 --- [CRUDapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29T09:22:48.111+05:30  INFO 6016 --- [CRUDapp] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-29T09:22:48.865+05:30  WARN 6016 --- [CRUDapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-29T09:22:48.917+05:30  INFO 6016 --- [CRUDapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-11-29T09:22:49.675+05:30  INFO 6016 --- [CRUDapp] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-11-29T09:22:50.823+05:30  INFO 6016 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-29T09:22:50.841+05:30  INFO 6016 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Started CRUDApplication in 9.753 seconds (process running for 10.679)
+2024-11-29T09:22:51.243+05:30  INFO 6016 --- [CRUDapp] [RMI TCP Connection(2)-192.168.161.142] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-29T09:22:51.244+05:30  INFO 6016 --- [CRUDapp] [RMI TCP Connection(2)-192.168.161.142] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-29T09:22:51.247+05:30  INFO 6016 --- [CRUDapp] [RMI TCP Connection(2)-192.168.161.142] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-11-29T10:00:44.438+05:30  INFO 6016 --- [CRUDapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29T10:00:44.452+05:30  INFO 6016 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-29T10:00:44.460+05:30  INFO 6016 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-29T12:23:20.830+05:30  INFO 2056 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Starting CRUDApplication using Java 21.0.4 with PID 2056 (D:\Saikumar\Desktop\Java PDF Notes\CRUDapp\target\classes started by Saikumar in D:\Saikumar\Desktop\Java PDF Notes\CRUDapp)
+2024-11-29T12:23:20.833+05:30  INFO 2056 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-11-29T12:23:22.793+05:30  INFO 2056 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-29T12:23:22.795+05:30  INFO 2056 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-11-29T12:23:22.854+05:30  INFO 2056 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.CatFactEntity.CatFactRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-11-29T12:23:22.857+05:30  INFO 2056 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Customer.CustomerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-11-29T12:23:22.859+05:30  INFO 2056 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Order.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-11-29T12:23:22.860+05:30  INFO 2056 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Product.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-11-29T12:23:22.862+05:30  INFO 2056 --- [CRUDapp] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.crud.crudapp.Security.CustomUserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-11-29T12:23:22.863+05:30  INFO 2056 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 0 JDBC repository interfaces.
+2024-11-29T12:23:22.874+05:30  INFO 2056 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-29T12:23:22.876+05:30  INFO 2056 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-29T12:23:22.955+05:30  INFO 2056 --- [CRUDapp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 5 JPA repository interfaces.
+2024-11-29T12:23:24.294+05:30  INFO 2056 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-29T12:23:24.313+05:30  INFO 2056 --- [CRUDapp] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-29T12:23:24.314+05:30  INFO 2056 --- [CRUDapp] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-29T12:23:24.397+05:30  INFO 2056 --- [CRUDapp] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-29T12:23:24.398+05:30  INFO 2056 --- [CRUDapp] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3482 ms
+2024-11-29T12:23:24.889+05:30  INFO 2056 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-29T12:23:25.606+05:30  INFO 2056 --- [CRUDapp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4ec0229c
+2024-11-29T12:23:25.611+05:30  INFO 2056 --- [CRUDapp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-29T12:23:25.702+05:30  INFO 2056 --- [CRUDapp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-29T12:23:25.850+05:30  INFO 2056 --- [CRUDapp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-29T12:23:25.926+05:30  INFO 2056 --- [CRUDapp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-29T12:23:26.454+05:30  INFO 2056 --- [CRUDapp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-29T12:23:28.034+05:30  INFO 2056 --- [CRUDapp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-29T12:23:28.040+05:30  INFO 2056 --- [CRUDapp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29T12:23:28.672+05:30  INFO 2056 --- [CRUDapp] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-29T12:23:29.546+05:30  WARN 2056 --- [CRUDapp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-29T12:23:29.638+05:30  INFO 2056 --- [CRUDapp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customeUserDetailsService
+2024-11-29T12:23:30.428+05:30  INFO 2056 --- [CRUDapp] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-11-29T12:23:31.448+05:30  INFO 2056 --- [CRUDapp] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-29T12:23:31.468+05:30  INFO 2056 --- [CRUDapp] [main] com.crud.crudapp.CRUDApplication         : Started CRUDApplication in 11.379 seconds (process running for 12.584)
+2024-11-29T12:23:31.935+05:30  INFO 2056 --- [CRUDapp] [RMI TCP Connection(3)-192.168.161.142] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-29T12:23:31.936+05:30  INFO 2056 --- [CRUDapp] [RMI TCP Connection(3)-192.168.161.142] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-29T12:23:31.939+05:30  INFO 2056 --- [CRUDapp] [RMI TCP Connection(3)-192.168.161.142] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-11-29T12:38:05.303+05:30  WARN 2056 --- [CRUDapp] [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<java.lang.String> com.crud.crudapp.Security.SecurityController.createNewUser(com.crud.crudapp.Security.LoginRequest)]
+2024-11-29T12:41:32.592+05:30  INFO 2056 --- [CRUDapp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-29T12:41:32.596+05:30  INFO 2056 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-29T12:41:32.610+05:30  INFO 2056 --- [CRUDapp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
